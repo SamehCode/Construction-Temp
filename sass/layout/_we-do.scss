@@ -1,0 +1,53 @@
+.we-do {
+    padding-top: 40px;
+    .main-title {
+        text-align: center;
+        text-transform: uppercase;
+        p {
+            font-size: 15px;
+            color: #888;
+        }
+        h2 {
+            font-size: 31px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: $dark-color;
+        }
+    }
+    .container {
+        display: flex;
+        gap: 40px;
+        padding-bottom: 0;
+        .box {
+            display: flex;
+            margin-bottom: 50px;
+            gap: 20px;
+            .text {
+                h4 {
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    margin-bottom: 8px;
+                    font-weight: 600;
+                }
+                p {
+                    color: #777;
+                    font-size: 13px;
+                    line-height: 1.6;
+                }
+            }
+            svg {
+                color: $gold-color;
+            }
+        
+        }
+        .center {
+            margin-top: 30px;
+
+            img {
+                max-width: 100%;
+                
+            }
+        }
+    }
+
+}

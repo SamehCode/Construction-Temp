@@ -1,0 +1,42 @@
+.scroll-top {
+    visibility: hidden;
+    transition: .2s;
+    width: fit-content;
+    z-index: 99999;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: fit-content;
+    height: fit-content;
+    button {
+        
+        a {
+            cursor: pointer;
+            background-color: #000;
+            color: $gold-color;
+           
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 4px;
+            
+            background-color: black;
+            display: block;
+            transition: .3s;
+            &:hover {
+                background-color: $dark-color;
+            &::after {
+                border-bottom-color: white;
+            }
+              
+            }
+            &::after {
+                content: '';
+                position: relative;
+                border: 8px solid transparent;
+                border-bottom-color: $gold-color;
+                bottom: 10px;
+                transition: .3s;
+            }
+        }
+    }
+}

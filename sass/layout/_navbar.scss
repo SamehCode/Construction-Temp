@@ -1,0 +1,215 @@
+@use '../helpers/colors' as *;
+
+.hd-address {
+    background-color: #eee;
+    font-size: 15px;
+    padding:  5px;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        .adress {
+            color: #555;
+            font-size: 12px;
+            padding-left: 10px;
+            svg {
+                margin-right: 5px;
+            }
+        }
+        .social {
+            color: #000;
+            svg {
+                margin-left: 20px;
+                font-size: 14px;
+                transition: .4s;
+                cursor: pointer;
+                &:hover {
+                    color: $blue-color;
+                }
+            }
+        }
+
+    }
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $dark-color;
+    height: 60px;
+    text-transform: uppercase;
+    position: relative;
+    left: 0;
+    top: -19px;
+    width: 100%;
+    z-index: 1000;
+    .container {
+        ul.links {
+            display: flex;
+            > li {
+                padding: 13px;
+                position: relative;
+                &:not(:first-of-type, :last-of-type) ::after {
+                    content: '';
+                    position: absolute;
+                    border: 5px solid transparent;
+                    border-top-color: #eee;
+                    top: 50%;
+                    right: -2px;
+                    transform: translateY(-2px);
+                }
+                a {
+                    font-weight: bold;
+                    font-size: 12px;
+                    color: #fff;
+                    transition: .4s;
+                    &.active .sub-menu {
+                        display: block;
+                        transition: .4s;
+                    }
+                    .sub-menu {
+                        border-top: 1px solid $gold-color;
+                        position: absolute;
+                        background-color: #eee;
+                        width: 180px;
+                        left: 10px;
+                        top: calc(100% + 9px);
+                        display: none;
+                        transition: 1s;
+                        > li {
+                            color: #000;
+                            transition: 0.3s;
+                            margin: 0 15px;
+                            padding: 13px;
+                            font-size: 11px;
+                            border-bottom: 1px solid #ccc;
+                            font-weight: bold;
+                            &:hover {
+                                color: $gold-color;
+                            }
+                            &.grand {
+                                position: relative;
+                                ul.alt-menu {
+                                    position: absolute;
+                                    background-color: #eee;
+                                    right: -180px;
+                                    width: 170px;
+                                    // min-height: 150px;
+                                    top: 0;
+                                    border-top: 1px solid $gold-color;
+                                    &::after {
+                                        content: '';
+                                        border: 5px solid transparent;
+                                        border-left-color: black;
+                                        position: relative;
+                                        right: 20px;
+                                        top: -100px;
+                                        z-index: 100;
+                                        float: left;
+                                    }
+                                    li {
+                                        
+                                        padding: 13px;
+                                        &:not(:last-child) {
+                                            border-bottom: 1px solid #ccc;
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & a:hover {
+                    color: $gold-color;
+                }
+                & a.active {
+                    color: $gold-color;
+                }
+            }
+        }
+        .search {
+            width: 50px;
+            right: 120px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            svg {
+                color: #888;
+            }
+        }
+    }
+}
+
+.main-title {
+    height: 100px;
+    overflow: hidden;
+    .container {
+        padding: 15px;
+        height: 100%;
+        
+        .logo {
+            width: 150px;
+            // margin-right: 100px;
+            cursor: pointer;
+            img {
+                max-width: 100%;
+            }
+        }
+        > div {
+            padding: 15px;
+            div {
+                color: #666;
+                font-size: 12px;
+                margin-bottom: 8px;
+                position: relative;
+                
+                + a {
+                    color: #000;
+                    font-weight: bold;
+                    font-size: 13px;
+                }
+                .num,
+                .mail {
+                    position: relative;
+                    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 1px;
+                        height: 100%;
+                        background-color: #777;
+                        
+                        
+                    }
+                    
+                }
+            }
+            .btn {
+                
+                button {
+                    width: 100%;
+                    background-color: $gold-color;
+                    padding: 10px 20px;
+                    
+                    transition: .3s;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $dark-color;
+                        a {
+                            color: $gold-color;
+                        }
+                    }
+                    a {
+                        color: white;
+                        font-weight: bold;
+                        font-size: 12px;
+                    }
+
+                }
+            }
+        }
+        
+    }
+}
+

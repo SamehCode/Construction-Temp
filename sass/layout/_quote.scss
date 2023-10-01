@@ -1,0 +1,35 @@
+@use '../helpers/colors' as *;
+
+.quote {
+    background-color: $gold-color;
+    height: 90px;
+    width: 940px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    p {
+        font-weight: bold;
+        float: left;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 15px;
+    }
+    button {
+        background-color: $dark-color;
+        float: right;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 12px 15px;
+        font-weight: bolder;
+        cursor: pointer;
+        transition: .4s;
+        &:hover {
+            background-color: #000;
+        }
+    }
+}

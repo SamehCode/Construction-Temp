@@ -1,0 +1,135 @@
+footer {
+    background-color: #000;
+    padding-top: 40px;
+    color: #555;
+    .box {
+        &.second {
+            margin-left: 60px;
+            margin-right: 60px;
+        }
+        h4 {
+            color: white;
+            text-transform: uppercase;
+            position: relative;
+            padding-left: 15px;
+            font-size: 15px;
+            margin: 30px 0;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 2px;
+                height: 100%;
+                background-color: $gold-color;
+            }
+        }
+        p {
+            line-height: 1.5;
+        }
+        &:first-of-type {
+            .image {
+                width: 180px;
+                
+                img {
+                    width: 100%;
+                    cursor: pointer;
+                }
+            }
+            p {
+                margin: 20px 0;
+            }
+            .social {
+                display: flex;
+                gap: 25px;
+                svg {
+                    cursor: pointer;
+                    color: #888;
+                    transition: .3s;
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+        &.second {
+            .dates {
+                .date {
+                    display: flex;
+                    justify-content: space-between;
+                    span {
+                        font-size: 14px;
+                        text-transform: capitalize;
+                        margin-bottom: 7px;
+                        &:first-child {
+                            width: 140px;
+
+                        }
+                    }
+                }
+            }
+        }
+        &.last {
+            ul.links {
+                li {
+                    a {
+                        color: #888;
+                        text-transform: capitalize;
+                        padding: 10px;
+                        padding-left: 15px;
+                        display: block;
+                        border-bottom: 1px solid #333;
+                        position: relative;
+                        transition: .3s;
+                        font-size: 14px;
+                        &:hover {
+                            color: $gold-color;
+                            padding-left: 20px;
+                            &::before {
+                                left: 5px;
+                                border-left-color: $gold-color;
+                            }
+                        }
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            border: 7px solid transparent;
+                            border-left-color: #888;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 0;
+                            transition: .3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .copy {
+        background-color: $gold-color;
+        color: black;
+        padding: 20px 0;
+        margin-top: 40px;
+        font-size: 13px;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            p {
+                text-transform: capitalize;
+            }
+            ul.links {
+                display: flex;
+                gap: 20px;
+                text-transform: capitalize;
+                li {
+                    transition: .3s;
+                    cursor: pointer;
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

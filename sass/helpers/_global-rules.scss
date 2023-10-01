@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+@import '../helpers/media';
+body {
+    font-family: tahoma, arial;
+    scroll-behavior: smooth;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+button {
+    border: none;
+}
+a {
+    text-decoration: none;
+}
+.clearfix {
+    clear: both;
+}
+/// container 
+.container {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+
+}
+
+@include breakpoints(xs) {
+    .container {
+        width: calc(100% - 30px);
+
+    }
+}
+
+@include breakpoints(sm) {
+    .container {
+        width: 540px;
+    }
+}
+
+@include breakpoints(md) {
+    .container {
+        width: 730px;
+    }
+}
+
+@include breakpoints(lg) {
+    .container {
+        width: 920px
+    }
+}
+
+@include breakpoints(xl) {
+    .container {
+        width: 1000px
+    }
+}
+
+
+
+/// grid system
+$gridcols: 12;
+@for $i from 1 through $gridcols {
+    .col-#{$i} {
+        width: calc(100% / ($gridcols / $i));
+        float: left;
+    }
+}

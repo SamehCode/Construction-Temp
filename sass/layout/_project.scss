@@ -1,0 +1,158 @@
+.project {
+    background-color: #eee;
+    min-height: 700px;
+    padding: 50px 0;
+    .main-title {
+        text-align: center;
+        text-transform: uppercase;
+        p {
+            color: #888;
+        }
+        h2 {
+            font-size: 30px;
+            margin-top: 10px;
+        }
+    }
+    ul.links {
+        display: flex;
+        gap: 15px;
+        border-bottom: 3px solid $gold-color;
+        margin-bottom: 30px;
+        li {
+          
+            a {
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 13px;
+                padding: 10px;
+                color: $dark-color;
+                display: inline-block;
+                transition: .3s;
+                width: fit-content;
+                text-align: center;
+                &.active {
+                    background-color: $gold-color;
+                    color: white;
+                }
+                &:hover {
+                    background-color: $gold-color;
+                    color: white;
+                }
+            }
+            
+        }
+    }
+    .photo-gallery {
+        margin-top: 40px;
+        
+        .image {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            transition: .4s;
+           .overlay {
+            visibility: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0, .6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+           }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            .plus {
+                background-color: $gold-color;
+                color: white;
+                width: fit-content;
+
+                transition: .4s;
+                font-weight: boler;
+                right: 0;
+                position: absolute;
+                font-size: 16px;
+                top: 0;
+                visibility: hidden;
+                z-index: 100;
+            }
+            .text {
+                visibility: hidden;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+                text-transform: uppercase;
+                margin-left: 20px;
+                z-index: 100;
+                transition: .4s;
+                h4 {
+                    color: white;
+                    padding-bottom: 20px;
+                    cursor: pointer;
+                    transition: .3s;
+                    &:hover {
+                        color: $gold-color;
+                    }
+                }
+                button {
+                    background-color: $gold-color;
+                    padding: 7px;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                    transition: .3s;
+                    &:hover {
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+            }
+            &:hover {        
+                    
+                .overlay {
+                    visibility: visible;
+                    
+                }
+                img {
+                    transform: scale(1);
+                }
+                .plus {
+                    visibility: visible;
+                    padding: 8px 10px;
+                    width: fit-content;
+                    height: fit-content;
+                    transform: rotate(1turn);
+                }
+                .text {
+                    visibility: visible;
+                    transform: translateY(-10px);   
+                }
+            }
+        }
+    }
+    a.view {
+        background-color: $gold-color;
+        color: white;
+        display: block;
+        width: fit-content;
+        padding: 10px 16px;
+        margin: 30px auto;
+        font-weight: bold;
+        transition: .3s;
+        text-transform: uppercase;
+        font-size: 12px;
+        border-radius: 4px;
+        &:hover {
+            background-color: $dark-color;
+            color: $gold-color;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+// import global rules
+@use './sass/helpers/global-rules' as *;
+
+// use colors
+@use './sass/helpers/colors' as *;
+
+// import media mixins
+@use './sass/helpers/media' as *;
+
+// import nav
+@use './sass/layout/navbar' as *;
+
+
+
+// import quote
+@use './sass/layout/quote.scss' as *;
+
+// import head slider
+@import './sass/layout/head-slide';
+
+@import './sass/helpers/mixins';
+
+@import './sass/helpers/media';
+
+// import about
+@import './sass/layout/about';
+
+// import stats
+@import './sass/layout/stats';
+
+// import scroll top button
+@import './sass/layout/scroll-to-top';
+
+// import what we do section
+@import './sass/layout/we-do';
+
+// import project section
+@import './sass/layout/project';
+
+// import testimonials section
+@import './sass/layout/testi';
+
+// import we help section
+@import './sass/layout/we-help';
+
+// import recent
+@import './sass/layout/recent';
+
+// import footer
+@import './sass/layout/footer';

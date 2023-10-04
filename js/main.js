@@ -67,7 +67,7 @@ let firstInt = setInterval(() => {
         removeAllActive()
         servArr[randomNum].classList.add('active')
         slideBullets[randomNum].classList.add('active')
-        landingSection.style.backgroundImage = 'url("../imgs/' + imgsArr[randomNum] + '")'
+        landingSection.style.backgroundImage = 'url("imgs/' + imgsArr[randomNum] + '")'
     }, 4000)
 function leftSlide () {
     if (currentSlide <= 1) {

@@ -138,7 +138,7 @@ window.addEventListener('scroll', () => {
                 let target = parseInt(counter.dataset.count)
 
                 if(count < target) {
-                    count++
+                    count += 20
 
                     counter.innerText = count
 

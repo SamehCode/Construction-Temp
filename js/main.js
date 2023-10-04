@@ -42,7 +42,7 @@ document.querySelectorAll('.bullets li').forEach(li => {
         slideBullets.forEach(bullet => {
             bullet.classList.remove('active')
             this.classList.add('active')
-            landingSection.style.backgroundImage = 'url("../imgs/' + imgsArr[parseInt(this.getAttribute('data-index')) - 1] + '")';
+            landingSection.style.backgroundImage = 'url("imgs/' + imgsArr[parseInt(this.getAttribute('data-index')) - 1] + '")';
             servArr[parseInt(this.getAttribute('data-index')) - 1].classList.add('active')
             clearInterval(firstInt)
             currentSlide = parseInt(this.getAttribute('data-index'))        

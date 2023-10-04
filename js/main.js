@@ -128,7 +128,7 @@ window.addEventListener('scroll', () => {
 
     }
 
-    if(scrollY > container.offetTop - container.offsetHeight - 200 {
+    if(scrollY > container.offetTop - container.offsetHeight - 200) {
 
         counters.forEach(counter => {
             counter.innerText = 0;

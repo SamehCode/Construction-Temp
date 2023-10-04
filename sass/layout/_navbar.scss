@@ -1,5 +1,7 @@
 @use '../helpers/colors' as *;
 
+@import '../helpers/media';
+
 .hd-address {
     background-color: #eee;
     font-size: 15px;
@@ -7,6 +9,7 @@
     .container {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         .adress {
             color: #555;
             font-size: 12px;
@@ -30,12 +33,39 @@
 
     }
 }
+
+@include breakpoints(xs) {
+    .hd-address {
+        .container{
+            flex-direction: column;
+            text-align: center;
+            .col-4 {
+                padding: 10px;
+                width: 100%;
+            }
+        }
+    }
+    
+}
+@include breakpoints(sm) {
+    .hd-address {
+        .container{
+            flex-direction: column;
+            text-align: center;
+            .col-4 {
+                padding: 10px;
+                width: 100%;
+            }
+        }
+    }
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: $dark-color;
-    height: 60px;
+    min-height: 60px;
     text-transform: uppercase;
     position: relative;
     left: 0;
@@ -43,10 +73,27 @@ nav {
     width: 100%;
     z-index: 1000;
     .container {
+        .burger {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            background-color: $gold-color;
+            align-items: center;
+            display: none;
+            cursor: pointer;
+            span {
+                width: 100%;
+                background-color: white;
+                height: 2px;
+            }
+        }
         ul.links {
             display: flex;
             > li {
-                padding: 13px;
+                padding: 15px;
                 position: relative;
                 &:not(:first-of-type, :last-of-type) ::after {
                     content: '';
@@ -75,6 +122,7 @@ nav {
                         top: calc(100% + 9px);
                         display: none;
                         transition: 1s;
+                        z-index: 1000;
                         > li {
                             color: #000;
                             transition: 0.3s;
@@ -124,6 +172,10 @@ nav {
                 }
                 & a.active {
                     color: $gold-color;
+                    
+                }
+                & a.active::after {
+                    color: $gold-color;
                 }
             }
         }
@@ -141,16 +193,170 @@ nav {
     }
 }
 
+@include breakpoints(xs) {
+    nav {
+        
+
+        .container {
+            .burger {
+                display: flex;
+            }
+            .col-9 {
+                width: 100%;
+            }
+
+            ul.links {
+                display: none;
+                &.col{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                    li {
+                       
+                        padding: 10px;
+                        &:not(:first-of-type, :last-of-type) ::after {
+                            top: 20px;
+                        }
+                        
+                        a.active {
+                            .sub-menu {
+                                   width: calc(100% + 8px);
+                                position: relative;
+                                margin: 10px 0;
+                                left: 0;
+                               li {
+                                margin: 0;
+                                a {
+                                    display: block;
+                                }
+                               }
+                            }
+                        } 
+                    }   
+                }
+            }
+            .search {
+                top: 20px;
+                transform: translate(0);
+                right: 70px;
+            }
+        
+        }
+    }
+}
+@include breakpoints(sm) {
+    nav {
+        
+
+        .container {
+            .burger {
+                display: flex;
+            }
+            .col-9 {
+                width: 100%;
+            }
+
+            ul.links {
+                display: none;
+                &.col{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                    li {
+                       
+                        padding: 10px;
+                        &:not(:first-of-type, :last-of-type) ::after {
+                            top: 20px;
+                        }
+                        
+                        a.active {
+                            .sub-menu {
+                                   width: calc(100% + 8px);
+                                position: relative;
+                                margin: 10px 0;
+                                left: 0;
+                               li {
+                                margin: 0;
+                                a {
+                                    display: block;
+                                }
+                               }
+                            }
+                        } 
+                    }   
+                }
+            }
+            .search {
+                top: 20px;
+                transform: translate(0);
+                right: 70px;
+            }
+        
+        }
+    }
+}
+@include breakpoints(md) {
+    nav {
+        
+
+        .container {
+            .burger {
+                display: flex;
+            }
+            .col-9 {
+                width: 100%;
+            }
+
+            ul.links {
+                display: none;
+                &.col{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                    li {
+                       
+                        padding: 10px;
+                        &:not(:first-of-type, :last-of-type) ::after {
+                            top: 20px;
+                        }
+                        
+                        a.active {
+                            .sub-menu {
+                                   width: calc(100% + 8px);
+                                position: relative;
+                                margin: 10px 0;
+                                left: 0;
+                               li {
+                                margin: 0;
+                                a {
+                                    display: block;
+                                }
+                               }
+                            }
+                        } 
+                    }   
+                }
+            }
+            .search {
+                top: 20px;
+                transform: translate(0);
+                right: 70px;
+            }
+        
+        }
+    }
+}
+
+
 .main-title {
-    height: 100px;
-    overflow: hidden;
+    height: 120px;
     .container {
         padding: 15px;
         height: 100%;
         
+
         .logo {
             width: 150px;
-            // margin-right: 100px;
             cursor: pointer;
             img {
                 max-width: 100%;
@@ -213,3 +419,65 @@ nav {
     }
 }
 
+
+
+
+
+
+
+@include breakpoints(md) {
+    .main-title {
+        height: 200px;
+        .container {
+            .col-4 {
+                width: 100%;
+                .logo {
+                    margin: auto;
+                }
+            }
+            .col-2 {
+                width: 25%;
+            }
+        }
+    }
+}
+
+@include breakpoints(sm) {
+    .main-title {
+
+        .container {
+            .col-4 {
+                width: 100%;
+                .logo {
+                    margin: auto;
+                }
+            }
+            .col-2 {
+              width: 33.3%;
+              text-align: center;
+              &.last {
+                margin: 0 0 20px;
+                margin-left: 33%;
+            }
+            }
+        }
+    }
+}
+
+@include breakpoints(xs) {
+    .main-title {
+
+        .container {
+            .col-4 {
+                width: 100%;
+                .logo {
+                    margin: auto;
+                }
+            }
+            .col-2 {
+              width: 50%;
+             
+            }
+        }
+    }
+}

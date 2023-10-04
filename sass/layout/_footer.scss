@@ -115,6 +115,9 @@ footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            
             p {
                 text-transform: capitalize;
             }
@@ -129,6 +132,97 @@ footer {
                         color: white;
                     }
                 }
+            }
+        }
+    }
+}
+
+@include breakpoints(xs) {
+    footer {
+        .container {
+            .col-4 {
+                width: calc(100% - 80px);
+                margin-left: 40px;
+                margin-bottom: 40px;
+            }
+            .col-5 {
+                width: calc(100% - 80px);
+                margin-left: 40px;
+                margin-bottom: 40px;
+                .box {
+                    &.second {
+                        margin: 0;
+                    }
+                }
+            }
+            .col-3 {
+                width: calc(100% - 80px);
+                margin-left: 40px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+@include breakpoints(sm) {
+    footer {
+        .container {
+            .col-4 {
+                width: 50%;
+                // margin-left: 40px;
+                margin-bottom: 40px;
+            }
+            .col-5 {
+                width: 50%;
+
+                margin-bottom: 40px;
+                .box {
+                    &.second {
+                        margin: 0;
+                        height: 260px;
+                    }
+                }
+            }
+            .col-3 {
+                width: 50%;
+                // margin-left: 40px;
+                margin-bottom: 40px;
+            }
+        }
+        .copy {
+            .container{ 
+                p {
+                    margin: auto;
+                }
+                ul.links {
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+@include breakpoints(md) {
+    footer {
+        .container {
+            .col-4 {
+                width: 50%;
+                // margin-left: 40px;
+                margin-bottom: 40px;
+            }
+            .col-5 {
+                width: 50%;
+
+                margin-bottom: 40px;
+                .box {
+                    &.second {
+                        margin: 0;
+                        height: 260px;
+                    }
+                }
+            }
+            .col-3 {
+                width: 50%;
+                // margin-left: 40px;
+                margin-bottom: 40px;
             }
         }
     }

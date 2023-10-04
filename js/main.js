@@ -9,6 +9,15 @@ navLinks.forEach(link => {
     }
 })
 
+// nav toggler
+let toggleBtn = document.querySelector('.burger');
+let navContainer = document.querySelector('nav ul.links');
+
+toggleBtn.onclick = function () {
+    navContainer.classList.toggle('col')
+}
+
+
 let landingSection = document.querySelector('.head-slider')
 let servArr = Array.from(document.querySelectorAll('.head-slider .srv'))
 let imgsArr = ['landing01.jpg', 'landing02.jpg', 'landing03.jpg', 'landing04.jpg', 'landing05.jpg', 'landing06.jpg' ]
@@ -94,9 +103,8 @@ allAccords.forEach(accord => {
         allAccords.forEach(item => {
             item.classList.remove('clicked')
         })
-        if (this.classList.contains('clicked')) {
+        if(this.classList.contains('clicked')) {
             this.classList.remove('clicked')
-            
         } else {
             this.classList.add('clicked')
         }
@@ -107,21 +115,29 @@ allAccords.forEach(accord => {
 // stats counter logic
 let counters = document.querySelectorAll('.stats .box .counter')
 let container = document.querySelector('.stats .box')
-let activated = false
+let activated = false;
+
+
 
 window.addEventListener('scroll', () => {
-    if(scrollY >= 300) {
-        document.querySelector('.scroll-top').style = 'visibility: visible;'
-    } else {
-        document.querySelector('.scroll-top').style = 'visibility: hidden;'
+    counters.forEach(counter => {
+        counter.textContent = 0
+    })
+    console.log(pageYOffset)
+    console.log(container.clientHeight)
+    console.log(container.offsetHeight)
+    console.log(activated)
+    // if(scrollY >= 300) {
+    //     document.querySelector('.scroll-top').style = 'visibility: visible;'
+    // } else {
+    //     document.querySelector('.scroll-top').style = 'visibility: hidden;'
 
-    }
+    // }
 
     if(scrollY > container.offetTop - container.offsetHeight - 200 && activated === false) {
 
         counters.forEach(counter => {
-            counter.innerText = 0
-
+            counter.innerText = 0;
             let count = 0
 
             function updateCount () {
@@ -141,15 +157,15 @@ window.addEventListener('scroll', () => {
             
             updateCount()
 
-            activated = true
+            activated = true;
 
-        })
+        });
 
-    } else if(pageYOffset < container.offetTop - container.offsetHeight - 500 || pageYOffset === 0 && activated === true) {
+    } else if(scrollY < container.offetTop - container.offsetHeight - 500 || pageYOffset === 0 && activated === true) {
         counters.forEach(counter => {
             counter.innerText = 0
         })
-        activated = false
+        activated = false;
     }
 
 })
@@ -195,4 +211,3 @@ allBullets.forEach(bullet => {
     }
 })
 
-console.log(postsArr[0])

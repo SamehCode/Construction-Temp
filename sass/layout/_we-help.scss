@@ -1,77 +1,136 @@
 .we-help {
-    position: relative;
-    padding: 15px 0;
+    background-color: $gold-color;
     .container {
         display: flex;
-        &::before {
-            content: '';
-            position: absolute;
-            width: 40%;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background-color: $gold-color;
-            z-index: -10;
-        }
-        &::after {
-            content: '';
-            position: absolute;
-            width: 60%;
-            top: 0;
-            right: 0;
-            height: 100%;
-            background-color: $dark-color;
-            z-index: -10;
-        }
+        padding: 0;
+        margin-right: 0;
+        align-items: center;
         .left {
+            margin-right: 50px;
             width: 40%;
-            h4 {
-                color: #000;
+            
+            p {
                 text-transform: uppercase;
-                margin-bottom: 10px;
+                font-weight: 600;
+                font-size: 15px;
+                padding-bottom: 10px;
             }
             span {
                 color: white;
                 font-weight: bold;
-                font-size: 20px;
+                font-size: 16px;
+                
             }
         }
-        .right {   
-            width: 60%;
+        .right {
+            flex: 1;
+            background-color: $dark-color;
+            padding: 30px;
             display: flex;
-            padding-left: 30px;
+            gap: 70px;
             align-items: center;
+            // flex-wrap: wrap;
             .text {
                 color: white;
-                width: 40%;
+                margin-left: 50px;
                 h3 {
                     text-transform: uppercase;
-                    font-size: 14px;
-                    margin-bottom: 8px;
-                    
+                    font-size: 18px;
+                    margin-bottom: 10px;
                 }
                 p {
                     font-size: 13px;
                 }
             }
             form {
-                width: 330px;
+                
+                
                 input[type='email'] {
-                    padding: 12px;
-                    width: 300px;
-                    margin-left: 50px;
                     background-color: $dark-color;
-                    border: 1px solid #444;
-                    &::placeholder {
-                        font-size: 12px;
-                       }
+                    border: 1px solid #777;
+                    // flex: 1;
+                    flex-basis: 30%;
+                    padding: 10px;
+                    padding-right: 150px;
                     &:focus {
                         background-color: white;
                         outline: none;
-                        border-color: $gold-color;
-                       
+                        border: 1px solid $gold-color;
                     }
                 }
+            }
+        }
+
+    }
+}
+
+@include breakpoints(xs) {
+    .we-help {
+        .container {
+            flex-direction: column;
+            margin: auto;
+            .left {
+                text-align: start;
+                padding: 30px;
+                width: 100%;
+                margin-right: 0;
+            }
+            .right {
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                padding: 20px;
+                align-items: start;
+                padding-left: 50px;
+                .text {
+                    margin-left: 0;
+                }
+                form {
+                    flex-wrap: wrap;
+
+                }
+            }
+        }
+    }
+}
+@include breakpoints(sm) {
+    .we-help {
+        .container {
+            flex-direction: column;
+            margin: auto;
+            .left {
+                text-align: start;
+                padding: 30px;
+                width: 100%;
+                margin-right: 0;
+            }
+            .right {
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                padding: 20px;
+                align-items: start;
+                padding-left: 50px;
+                .text {
+                    margin-left: 0;
+                }
+                form {
+                    flex-wrap: wrap;
+
+                }
+            }
+        }
+    }
+}
+
+@include breakpoints(md) {
+    .we-help {
+        .container {
+            .left {
+
+            }
+            .right {
+                gap: 20px;
             }
         }
     }

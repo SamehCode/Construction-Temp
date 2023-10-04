@@ -13,7 +13,7 @@
 
 
 // import quote
-@use './sass/layout/quote.scss' as *;
+@import './sass/layout/quote.scss';
 
 // import head slider
 @import './sass/layout/head-slide';

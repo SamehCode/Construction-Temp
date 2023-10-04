@@ -2,15 +2,13 @@
     background-color: $dark-color;
     .container {
         padding: 50px 0;
-        height: 300px;
-        min-height: 250px;
+        min-height: 300px;
         .box {
             float: left;
             margin-left: 20px;
             text-align: center;
             width: calc((100% - 80px) / 4);
             color: white;
-            padding: 20px;
             margin-bottom: 20px;
             svg {
                 color: $gold-color;
@@ -31,3 +29,27 @@
         }
     }
 }
+
+@include breakpoints(sm) {
+    .stats {
+        .container {
+            height: 450px;
+            .box {
+                width: calc((100% - 80px) / 2);
+            }
+        }
+    }
+}
+
+@include breakpoints(xs) {
+    .stats {
+        .container {
+            min-height: 850px;
+            .box {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    }
+}
+

@@ -3,6 +3,8 @@
     .main-title {
         text-align: center;
         text-transform: uppercase;
+        height: fit-content;
+        margin-bottom: 2em;
         p {
             color: #888;
             font-size: 15px;
@@ -49,6 +51,55 @@
         border-radius: 4px;
         &:hover {
             background-color: $dark-color;
+        }
+    }
+}
+
+
+@include breakpoints(md) {
+    .recent {
+        .container {
+            .col-4 {
+                width: 50%;
+                .box {
+                    margin-bottom: 30px;
+                    &.middle {
+                       margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+@include breakpoints(sm) {
+    .recent {
+        .container {
+            .col-4 {
+                width: 70%;
+                margin-left: 15%;
+                .box.middle {
+                    margin-left: 0;
+                    margin-right: 0;
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
+@include breakpoints(xs) {
+    .recent {
+        .container {
+            .col-4 {
+                width: 70%;
+                margin-left: 15%;
+                .box.middle {
+                    margin-left: 0;
+                    margin-right: 0;
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                }
+            }
         }
     }
 }

@@ -114,25 +114,19 @@ allAccords.forEach(accord => {
 
 // stats counter logic
 let counters = document.querySelectorAll('.stats .box .counter')
-let container = document.querySelector('.stats .box')
-let activated = false;
-
-
+let container = document.querySelector('.stats')
 
 window.addEventListener('scroll', () => {
     counters.forEach(counter => {
         counter.textContent = 0
     })
-    console.log(pageYOffset)
-    console.log(container.clientHeight)
-    console.log(container.offsetHeight)
-    console.log(activated)
-    // if(scrollY >= 300) {
-    //     document.querySelector('.scroll-top').style = 'visibility: visible;'
-    // } else {
-    //     document.querySelector('.scroll-top').style = 'visibility: hidden;'
+  
+    if(scrollY >= 300) {
+        document.querySelector('.scroll-top').style = 'visibility: visible;'
+    } else {
+        document.querySelector('.scroll-top').style = 'visibility: hidden;'
 
-    // }
+    }
 
     if(scrollY > container.offetTop - container.offsetHeight - 200 && activated === false) {
 
@@ -157,16 +151,11 @@ window.addEventListener('scroll', () => {
             
             updateCount()
 
-            activated = true;
+
 
         });
 
-    } else if(scrollY < container.offetTop - container.offsetHeight - 500 || pageYOffset === 0 && activated === true) {
-        counters.forEach(counter => {
-            counter.innerText = 0
-        })
-        activated = false;
-    }
+    } 
 
 })
 // start projects logic
